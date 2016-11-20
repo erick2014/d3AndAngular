@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<style>
+	    .bar{
+	      height: 10px;
+	      background-color: blue;
+	      border-bottom: 1px solid white;
+	    }
+	  </style>
+</head>
+
+	<body>
+	  <script>
+	  	var data=d3.range(100);
+	  	var selector=d3.select('body')
+	  		.selectAll('.bar')
+	  		.data(data)
+	  		.enter()
+	  		.append('div')
+	  		.style('width',function(d){ return d + '%'; })
+	  		.attr('class','bar')
+	  	console.log(selector);
+	  </script>
+	</body>
+</html>
