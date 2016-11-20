@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-  	<title>Document</title>
+    <title>Document</title>
   </head>
   <style>
-  	html, body{
-  		width: 100%;
-  		height: 100%;
-  		margin:0;
-  	}
+    html, body{
+      width: 100%;
+      height: 100%;
+      margin:0;
+    }
     .bar{
       background-color: blue;
       display:block;
@@ -17,13 +17,13 @@
     }
   </style>
   <body>
-    	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-      <script>
-    	var bars = d3.select('body').selectAll('.bar');
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script>
+      var bars = d3.select('body').selectAll('.bar');
 
       update();
-  		//periodically updating the bar chart with new data  	
-  		function update(){
+      //periodically updating the bar chart with new data   
+      function update(){
         var n = Math.round(Math.random() * 100);
         var data = d3.range(n);
         bars = bars.data(data);
@@ -38,8 +38,8 @@
           .style('height', 100 / n + '%');
       }
 
-  		setInterval(update,800);
-    		
+      setInterval(update,800);
+        
     </script>
   </body>
 </html>
