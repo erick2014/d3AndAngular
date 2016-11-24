@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <script src="http://d3js.org/d3.v3.min.js" ></script>
+    <meta charset="utf-8">
+    <style>
+      body{ margin:0; }
+      path{ stroke: black;stroke-width:2px;fill:none;  }
+    </style>
+  </head>
+  <body>
+    <script>
+      var lineGenerator=d3.svg.line()
+        .x(function(d){ return d[0]; })
+        .y(function(d){ return d[1]; });
+
+      var lineData=[ [154,14],[35,172],[251,127],[31,58],[157,205],[154,14] ]
+      //create `<svg>` and inner `<path>`element
+      d3.select('body')
+      .append('svg')
+        .attr('width',400)
+        .attr('height',400)
+      //use the generator and line data to create the `d` attribute for our path
+      .append('path')
+        .datum(lineData)
+        .attr('d',lineGenerator)
+        
+    </script>
+  </body>
+</html>
